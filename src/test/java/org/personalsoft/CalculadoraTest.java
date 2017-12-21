@@ -15,7 +15,7 @@ public class CalculadoraTest {
 	
 	@Test
     public void testResta() {
-		
+		int valor = 0;
         assertEquals(0, calculadora.getPrimerNumero() - calculadora.getSegundoNumero());
     }
 }
