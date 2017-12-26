@@ -1,8 +1,16 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'war'
 
 sourceCompatibility = 1.5
 version = '1.0'
+
+[ compileJava, compileTestJava ]*.options*.encoding = 'UTF-8'
+
+repositories {
+mavenCentral()
+}
+
 jar {
     manifest {
         attributes 'Implementation-Title': 'Gradle Quickstart',
@@ -29,4 +37,8 @@ uploadArchives {
            dirs 'repos'
        }
     }
+}
+
+war {
+archiveName = "${baseName}.${extension}"
 }
